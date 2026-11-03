@@ -1,0 +1,15 @@
+# Raw TEP data and the built database stay out of git
+data/raw/
+*.RData
+*.rda
+*.duckdb
+*.duckdb.*
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+.ruff_cache/
+
+.DS_Store

@@ -1,0 +1,35 @@
+[project]
+name = "plant-copilot"
+version = "0.1.0"
+description = "Copilot for a shift engineer on the Tennessee Eastman Process."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.13,<3.14"
+dependencies = [
+    "duckdb",
+    "pandas",
+    "pyreadr",
+]
+
+[dependency-groups]
+dev = [
+    "pytest",
+    "ruff",
+]
+
+[tool.uv]
+package = false
+
+[tool.pytest.ini_options]
+addopts = "-m 'not realdata'"
+pythonpath = ["."]
+testpaths = ["tests"]
+markers = [
+    "realdata: needs the real TEP files and database; run with pytest -q -m realdata",
+]
+
+[tool.ruff]
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
